@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+      .button-as-link {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px 0;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+      }
+
+      .button-as-link:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div>
+      <a href="/new" class="button-as-link">New Message</a>
+    </div>
+    <div>
+      <h2>Recent Messages</h2>
+      <% messages.forEach(function(item){ %>
+      <div class="msg">
+        <div class="msgDiv">
+          <p><%= item.user %>:</p>
+          <p><%= item.text %></p>
+        </div>
+        <p><%= item.added %></p>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
